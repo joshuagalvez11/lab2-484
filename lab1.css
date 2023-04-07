@@ -1,0 +1,17 @@
+body{
+    text-align: left;
+}
+
+table, tr, th{
+    text-align: left;
+    border: 2px solid;
+}
+
+#info{
+    width: 100%;
+    display: flex;
+}
+.infoEl{
+    width: 20%;
+    align-items: center;
+}
