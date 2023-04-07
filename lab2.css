@@ -15,3 +15,6 @@ table, tr, th{
     width: 20%;
     align-items: center;
 }
+.row{
+    display: table-row
+}

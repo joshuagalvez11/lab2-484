@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lab2.css">
-    <title>About Me</title>
+    <title>Form Calculationer</title>
 </head>
 
 <body>
-    <form>
+    <form id="form">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" value="Your Name "><br>
         <label for="date">Task Date:</label><br>
@@ -20,11 +20,13 @@
 
 
     <form>
+        <input type="text" id="calc_text" name="calc_text" value="0"><br>
+        
         <div class="row">
             <button class='calc_num' id='1'> 1</button>
             <button class='calc_num' id='2'> 2</button>
             <button class='calc_num' id='3'> 3</button>
-            <button class='operator' id='cc'> cc</button>
+            <button class='operator' id='c'> c</button>
         </div>
 
         <div class="row">
@@ -43,13 +45,13 @@
 
         <div class="row">
             <button class='calc_num' id='0'> 0</button>
-            <button class='operator' id='='> =</button>
             <button class='operator' id='-'> -</button>
             <button class='operator' id='+'> +</button>
+            <button class='operator' id='='> =</button>
         </div>
 
     </form>
 
 </body>
-
+    <script src="./script.js"></script>
 </html>
