@@ -16,41 +16,44 @@
         <label for="date">Task Date:</label><br>
         <input type="text" id="date" name="date" value="12-02-2000"><br><br>
         <input type="submit" value="Submit">
+
+        <div id='calc'>
+            <input type="text" id="calc_text" name="calc_text" value="0">
+            
+            <div class="row">
+                <button class='calc_num' id='c1'>1</button>
+                <button class='calc_num' id='c2'>2</button>
+                <button class='calc_num' id='c3'>3</button>
+                <button class='operator' id='cc'>c</button>
+            </div>
+    
+            <div class="row">
+                <button class='calc_num' id='c4'>4</button>
+                <button class='calc_num' id='c5'>5</button>
+                <button class='calc_num' id='c6'>6</button>
+                <button class='operator' id='c/'>/</button>
+            </div>
+    
+            <div class="row">
+                <button class='calc_num' id='c7'>7</button>
+                <button class='calc_num' id='c8'>8</button>
+                <button class='calc_num' id='c9'>9</button>
+                <button class='operator' id='c*'>*</button>
+            </div>
+    
+            <div class="row">
+                <button class='calc_num' id='c0'>0</button>
+                <button class='operator' id='c-'>-</button>
+                <button class='operator' id='c+'>+</button>
+                <button class='operator' id='c='>=</button>
+            </div>
+    
+        </div>
+
     </form>
 
 
-    <form>
-        <input type="text" id="calc_text" name="calc_text" value="0"><br>
-        
-        <div class="row">
-            <button class='calc_num' id='1'> 1</button>
-            <button class='calc_num' id='2'> 2</button>
-            <button class='calc_num' id='3'> 3</button>
-            <button class='operator' id='c'> c</button>
-        </div>
 
-        <div class="row">
-            <button class='calc_num' id='4'> 4</button>
-            <button class='calc_num' id='5'> 5</button>
-            <button class='calc_num' id='6'> 6</button>
-            <button class='operator' id='/'> /</button>
-        </div>
-
-        <div class="row">
-            <button class='calc_num' id='7'> 7</button>
-            <button class='calc_num' id='8'> 8</button>
-            <button class='calc_num' id='9'> 9</button>
-            <button class='operator' id='*'> *</button>
-        </div>
-
-        <div class="row">
-            <button class='calc_num' id='0'> 0</button>
-            <button class='operator' id='-'> -</button>
-            <button class='operator' id='+'> +</button>
-            <button class='operator' id='='> =</button>
-        </div>
-
-    </form>
 
 </body>
     <script src="./script.js"></script>
