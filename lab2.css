@@ -18,3 +18,26 @@ table, tr, th{
 .row{
     display: table-row
 }
+
+
+/* #name-err{
+    background-color: darkblue;
+    color: whitesmoke;
+}
+#date-err{
+    background-color: darkorchid;
+    color: whitesmoke;
+}
+#hours-err{
+    background-color: brown;
+    color: whitesmoke;
+} */
+
+.err-false{
+    visibility: hidden;
+}
+.err-true{
+    visibility: visible;
+    background-color: brown;
+    color: whitesmoke;
+}

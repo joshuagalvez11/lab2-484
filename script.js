@@ -5,6 +5,11 @@ let names = document.getElementById("name")
 let date = document.getElementById("date")
 let calc = document.getElementById("calc")
 let calcText = document.getElementById("calc_text")
+let saveBtn = document.getElementById("saveHours")
+let hours = document.getElementById("hours")
+let hoursErr = document.getElementById("hours-err")
+
+
 
 // calcButtons = ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9']
 // for(i=0; i < calcButtons.length; i++){
@@ -72,31 +77,6 @@ function isCapitalized(str) {
   
     return false;
   }
-
-// function isDate(str) {
-//     // Define regex patterns for the various date formats
-//     const regexPatterns = [
-//       /^(\d{2})-(\d{2})-(\d{4})$/,
-//       /^(\d{2})\/(\d{2})\/(\d{4})$/,
-//       /^(\d{2})\\(\d{2})\\(\d{4})$/,
-//       /^([A-Za-z]+) (\d{1,2}), (\d{4})$/
-//     ];
-  
-//     // Loop through the regex patterns and check if the input string matches any of them
-//     for (let i = 0; i < regexPatterns.length; i++) {
-//       const matches = str.match(regexPatterns[i]);
-//       if (matches) {
-//         // If a match is found, create a new Date object and return it
-//         const month = matches[1].startsWith('0') ? matches[1].substring(1) : matches[1];
-//         const day = matches[2].startsWith('0') ? matches[2].substring(1) : matches[2];
-//         const year = matches[3];
-//         return true;
-//       }
-//     }
-  
-//     // If no matches are found, return null
-//     return false;
-//   }
 
 
 
@@ -199,6 +179,19 @@ function calcOpButtonPress(event) {
     }
 }
 
+function saveHoursBtn(event) {
+    event.preventDefault();
+    if(calcText.value.length > 0 && isNaN(calcText.value) == false){
+        hours.value = calcText.value
+        hoursErr.classList.remove("err-true")
+        hoursErr.classList.add("err-false")
+    } else {
+        hours.value = ""
+        hoursErr.classList.remove("err-false")
+        hoursErr.classList.add("err-true")
+    }
+}
+
 for (i = 0; i < calcButtons.length; i++) {
     calcButtons[i].addEventListener("click", calcButtonPress);
 }
@@ -206,3 +199,5 @@ for (i = 0; i < calcButtons.length; i++) {
 for (i = 0; i < calcOpButtons.length; i++) {
     calcOpButtons[i].addEventListener("click", calcOpButtonPress);
 }
+
+saveBtn.addEventListener("click", saveHoursBtn);

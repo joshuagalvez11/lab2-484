@@ -13,8 +13,11 @@
     <form id="form">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" value="Your Name "><br>
+        <h4 class="error-false" id="name-err">First letter of names should be Uppercase</h1>
+        
         <label for="date">Task Date:</label><br>
         <input type="text" id="date" name="date" value="12-02-2000"><br><br>
+        <h4 class="error-false" id="date-err">Not valid date format</h1>
 
         <h3>Calculationer</h3>
         <div id='calc'>
@@ -52,10 +55,13 @@
         </div><br><br>
 
         <label for="hours">Hours Worked This Week:</label><br>
-        <input type="text" id="hours" name="hours" value="0"><br><br>
+        <input type="text" id="hours" name="hours" value="0">
 
-
+        <h4 class="error-false" id="hours-err">Not valid number of hours worked</h1>
+        <br>
+        
         <input type="submit" value="Submit">
+        
 
     </form>
 
