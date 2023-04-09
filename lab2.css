@@ -41,3 +41,10 @@ table, tr, th{
     background-color: brown;
     color: whitesmoke;
 }
+#oldHtml{
+    visibility: hidden;
+}
+
+.bad-form{
+    background-color: blueviolet;
+}

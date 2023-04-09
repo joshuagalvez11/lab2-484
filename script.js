@@ -8,8 +8,15 @@ let calcText = document.getElementById("calc_text")
 let saveBtn = document.getElementById("saveHours")
 let hours = document.getElementById("hours")
 let hoursErr = document.getElementById("hours-err")
+let nameErr = document.getElementById("name-err")
+let dateErr = document.getElementById("date-err")
 
-
+//my info from dom for final pop up
+let myName = document.getElementById("my-name")
+let myId = document.getElementById("my-id")
+let myMajor = document.getElementById("my-major")
+let myTitle = document.getElementById("my-title")
+let MyParagraph = document.getElementById("my-paragraph")
 
 // calcButtons = ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9']
 // for(i=0; i < calcButtons.length; i++){
@@ -36,14 +43,67 @@ form.addEventListener("submit", submitForm);
 function submitForm(event) {
     console.log("\nSUBMIT CHECK")
     event.preventDefault();
+    let capCheck, dateCheck, hoursCheck; 
 
     console.log(names.value)
     console.log(isCapitalized(names.value)); 
-    
+    capCheck = isCapitalized(names.value)
+
     console.log(date.value)
     console.log(isDate(date.value))
+    dateCheck = isDate(date.value)
 
     console.log(calcText.value)
+
+    console.log(hours.value)
+    console.log(isHours(hours.value))
+    hoursCheck = isHours(hours.value)
+
+        if(capCheck == false){
+            console.log("CAP ERR")
+            nameErr.classList.remove("err-false")
+            nameErr.classList.add("err-true")
+        }else{
+            nameErr.classList.remove("err-true")
+            nameErr.classList.add("err-false")
+        }
+        if(dateCheck == false){
+            console.log("DATE ERR")
+            dateErr.classList.remove("err-false")
+            dateErr.classList.add("err-true")
+        }else{
+            dateErr.classList.remove("err-true")
+            dateErr.classList.add("err-false")
+        }
+        if(hoursCheck == false){
+            console.log("HOURS ERR")
+            hoursErr.classList.remove("err-false")
+            hoursErr.classList.add("err-true")
+        }else{
+            hoursErr.classList.remove("err-true")
+            hoursErr.classList.add("err-false")
+        }
+
+        if(capCheck && dateCheck && hoursCheck){
+            console.log("ALL GOOD")
+            document.body.classList.remove('bad-form')
+            alert(
+    `Name: ${names.value}
+    Date: ${date.value}
+    Calulator Value: ${calcText.value} 
+    Hours Worked: ${hours.value} 
+    My Name: ${myName.innerHTML.innerHTML}
+    My Major: ${myMajor.innerHTML}
+    ${myId.innerHTML}
+    ${myTitle.innerHTML} 
+    ${MyParagraph.innerHTML}
+    `
+            );
+        }else{
+            document.body.classList.add('bad-form')
+        }
+    
+
 }
 
 function isCapitalized(str) {
@@ -77,8 +137,6 @@ function isCapitalized(str) {
   
     return false;
   }
-
-
 
 
 function calcButtonPress(event) {
@@ -179,7 +237,14 @@ function calcOpButtonPress(event) {
     }
 }
 
-function saveHoursBtn(event) {
+function isHours() {
+    if(hours.value.length > 0 && isNaN(hours.value) == false){
+        return true
+    }
+    return false
+}
+
+function saveHoursBtn() {
     event.preventDefault();
     if(calcText.value.length > 0 && isNaN(calcText.value) == false){
         hours.value = calcText.value
